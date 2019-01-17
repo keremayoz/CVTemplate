@@ -1,0 +1,309 @@
+%Packages
+\documentclass[11 pt, a4paper, usenames, dvipsnames]{article}
+\usepackage{amsmath,amsfonts, lipsum}
+\usepackage[margin = 1in,textwidth = 16cm, includefoot]{geometry}
+\usepackage { url, multicol}
+\usepackage{sectsty,fontawesome}
+\usepackage{enumitem}
+\usepackage{parcolumns}
+\usepackage{amssymb}
+\usepackage{nth}
+\usepackage{makecell}
+\usepackage{paracol}
+ \usepackage{vwcol}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[x11names]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage[default]{gillius}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[many]{tcolorbox}
+\usepackage{hyperref}
+
+%Main color, choose your main color as you wish by changing rgb
+\definecolor{CV_Color}{rgb}{0.01, 0.31, 0.59}
+
+%Image path, setup your path accordingly
+\graphicspath{ {C:/Users/kerem/Desktop/ResimCV} }
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=Black,
+    filecolor=magenta,      
+    urlcolor=Black,
+}
+
+\newtcbox{\mybox}{nobeforeafter,colframe=CV_Color,colback=CV_Color,boxrule=0.5pt,arc=6pt,
+boxsep=3pt,left=4pt,right=4pt,top=4pt,bottom=4pt, height=25pt,valign=center} 
+
+\date{}
+
+%Page margins
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=8mm,
+right = 8mm,
+ top=8mm,
+bottom = 5mm,
+ }
+\pagenumbering{gobble}
+
+%Fonts of sections, you can change sizes and color as you wish
+\newcommand*{\SubFont}{%
+      \fontsize{15}{8}%
+\color{Gray}
+      \selectfont}
+
+\newcommand*{\RoleFont}{%
+      \fontsize{14}{8}%
+\color{Black}%
+\bf
+      \selectfont}
+
+\newcommand*{\DateFont}{%
+      \fontsize{10}{8}%
+\color{Gray}%
+\it
+      \selectfont}
+
+\newcommand*{\AchFont}{%
+      \fontsize{11}{8}%
+\color{Gray}%
+      \selectfont}
+
+\newcommand*{\TitleFont}{%
+      \fontsize{24}{10}%
+\color{CV_Color}
+      \selectfont}
+
+\newcommand*{\ProfileFont}{%
+      \fontsize{10}{2}%
+\color{Black}
+      \selectfont}
+
+\newcommand*{\SectionFont}{%
+      \fontsize{16}{5}%
+\color{CV_Color}%
+\bf
+\selectfont}
+
+\newcommand{\roundpic}[4][]{
+  \tikz\node [circle,draw, minimum width = #2,
+    path picture = {
+      \node [#1] at (path picture bounding box.center) {
+        \includegraphics[width=#3]{#4}};
+    }] {};}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   							 INTRODUCTION PART					         %%		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcolumnwidth{0.43\textwidth,0.25\textwidth,0.35\textwidth }
+\begin{paracol}{3} 
+\begin{flushleft}
+% Write name and personal information accordingly
+{\textbf{\TitleFont{NAME SURNAME}}} \vspace{-0.4em}
+\end{flushleft}
+{\SubFont{Title}}\vspace{0.7em} \\ 
+{\ProfileFont Personal information, goals, interests. Brief description of yourself.}
+  \switchcolumn[1]
+\begin {center}
+\roundpic[xshift=-0.03cm,yshift=0cm]{3.75cm}{3.75cm}{image}
+
+\end{center}
+  \switchcolumn[2]
+ \begin{itemize}
+% Write contact information.
+\item[] \hfill\ProfileFont \href{mailto:mailaddress@mail.com}{mailaddress@mail.com} \enskip\color{CV_Color} \verb||\faEnvelopeO 
+\item[]\hfill \ProfileFont {Phone Number} \enskip\color{CV_Color} \verb||\faPhone
+\item[] \hfill \ProfileFont\href{https://www.google.com/maps/@39.8696765,32.7465477,17z}{Location} \enskip\color{CV_Color} \verb||\faLocationArrow
+\item[] \hfill\ProfileFont\href{https://www.linkedin.com/in}{linkedinprofilename} \enskip \color{CV_Color}\verb||\faLinkedin
+\item[]\hfill \ProfileFont\href{https://github.com/} {githubusername} \enskip\color{CV_Color} \verb||\faGithub
+\end{itemize} 
+\end{paracol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   							 MAIN  PART					 	     	        %%		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcolumnwidth{0.5\textwidth,0.5\textwidth }
+\setlength{\columnsep}{2.8em}
+\vspace{-2pt}
+\begin{paracol}{2} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			          EXPERIENCE  PART	   		              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{\SectionFont\faCubes\enskip  EXPERIENCE}\vspace{-15pt}
+\par\noindent\rule{0.22\textwidth}{0.4pt}
+\begin{itemize}[leftmargin=0pt,align=left,labelwidth=\parindent,labelsep=0pt]
+
+% Experience 4
+\item[] {\RoleFont Experience Role} \\
+\normalfont Company \\ 
+{\DateFont StartDate - EndDate \hfill Location } \\ 
+{\color{CV_Color}\LARGE - }{Description}
+
+% Experience 3
+\item[] {\RoleFont Experience Role} \\
+\normalfont Company \\ 
+{\DateFont StartDate - EndDate \hfill Location } \\ 
+{\color{CV_Color}\LARGE - }{Description}
+
+% Experience 2
+\item[] {\RoleFont Experience Role} \\
+\normalfont Company \\ 
+{\DateFont StartDate - EndDate \hfill Location } \\ 
+{\color{CV_Color}\LARGE - }{Description}
+
+% Experience 1
+\item[] {\RoleFont Experience Role} \\
+\normalfont Company \\ 
+{\DateFont StartDate - EndDate \hfill Location } \\ 
+{\color{CV_Color}\LARGE - }{Description}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			          PROJECTS  PART	   	        		    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\par\noindent\rule{0.18\textwidth}{0.4pt}\vspace{-12pt}
+\section*{\SectionFont\faPaperPlane\enskip PROJECTS}\vspace{-15pt}
+\par\noindent\rule{0.18\textwidth}{0.4pt}\vspace{-1pt}
+
+\begin{itemize}[leftmargin=0pt,align=left,labelwidth=\parindent,labelsep=0pt]
+
+% Project 5
+\item[] \href{https://github.com/}{\textbf{Project Name}} \verb||\faGithub\enskip \\ 
+Description of project.
+
+% Project 4
+\item[] \href{https://github.com/}{\textbf{Project Name}} \verb||\faGithub\enskip \\ 
+Description of project.
+
+% Project 3
+\item[] \href{https://github.com/}{\textbf{Project Name}} \verb||\faGithub\enskip \\ 
+Description of project.
+
+% Project 2
+\item[] \href{https://github.com/}{\textbf{Project Name}} \verb||\faGithub\enskip \\ 
+Description of project.
+
+% Project 1
+\item[] \href{https://github.com/}{\textbf{Project Name}} \verb||\faGithub\enskip \\ 
+Description of project.
+\end{itemize}
+
+
+\switchcolumn[1]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			          EDUCATION  PART	   		              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\SectionFont\faMortarBoard\enskip EDUCATION}\vspace{-15pt}
+\par\noindent\rule{0.22\textwidth}{0.4pt} \vspace{0.4pt}
+\begin{itemize}[leftmargin=0pt,align=left,labelwidth=\parindent,labelsep=0pt]
+% Education 2
+\item[] {\RoleFont Degree Name} \\
+\normalfont School Name \\
+{\DateFont StartDate- EndDate \hfill Location }\\
+{\color{CV_Color}\LARGE - } Description, GPA, etc.
+
+
+% Education 1
+\item[] {\RoleFont Degree Name} \\
+\normalfont School Name \\
+{\DateFont StartDate- EndDate \hfill Location }\\
+{\color{CV_Color}\LARGE - } Description, GPA, etc.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			          SKILLS  PART	   		          		    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\SectionFont\faStar\enskip SKILLS}\vspace{-15pt}
+\par\noindent\rule{0.15\textwidth}{0.4pt} \\ \\
+% Write down your skills, you should organize them by size
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip \vspace{0.35em} \\
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip \vspace{0.35em} \\ 
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \vspace{0.35em} \\
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+\mybox{\color{White}Skill} \enskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			          ACHIEVEMENTS  PART	        		    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\SectionFont\faTrophy\enskip ACHIEVEMENTS}\vspace{-15pt}
+\par\noindent\rule{0.26\textwidth}{0.4pt}
+\begin{itemize}[leftmargin=0pt,align=left,labelwidth=\parindent,labelsep=0pt]
+% Achievement 4
+\item[] \href{https://www.google.com/}{\normalfont {Achievement}} \\
+{\AchFont Description}
+
+% Achievement 3
+\item[] \href{https://www.google.com/}{\normalfont {Achievement}} \\
+{\AchFont Description}
+
+% Achievement 2
+\item[] \href{https://www.google.com/}{\normalfont {Achievement}} \\
+{\AchFont Description}
+
+% Achievement 1
+\item[] \href{https://www.google.com/}{\normalfont {Achievement}} \\
+{\AchFont Description}
+\end {itemize}
+\vspace{-0.2em}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			          LANGUAGE  PART	   		              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\SectionFont\faComment\enskip LANGUAGE}\vspace{-15pt}
+\par\noindent\rule{0.22\textwidth}{0.4pt}
+\vspace{-1em}
+\begin{itemize}[leftmargin=0pt,align=left,labelwidth=\parindent,labelsep=0pt]
+\setlength{\columnsep}{0.2em}
+\begin{multicols}{2}
+
+% Language 2
+\item[] {Language} \\
+{\color{CV_Color} Proficiency Level}
+
+\switchcolumn[1]
+
+% Language 1
+\item[] {Language} \\
+{\color{CV_Color} Proficiency Level}
+
+\end{multicols}
+\end{itemize}
+
+\end{paracol}
+\end{document}
